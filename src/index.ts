@@ -16,14 +16,7 @@ async function init() {
 
     const app = express();
 
-    app.use(
-      cors({
-        origin: "https://tscfrontendfsix.vercel.app/",
-        credentials: true,
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-      }),
-    );
+    app.use(cors());
 
     app.use(cookieParser());
     app.use(bodyParser.json());
