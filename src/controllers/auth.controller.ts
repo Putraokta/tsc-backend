@@ -33,8 +33,10 @@ export default {
             res.cookie("token", "", {
                 httpOnly: true,
                 secure: true,
-                sameSite: 'none',
-                maxAge: 0,
+                sameSite: "lax",
+                domain: ".trisulasportclub.my.id",
+                path: "/",
+                maxAge: 7 * 24 * 60 * 60 * 1000,
             });
             success(res, null, "Logout successful");
         } catch (err) {
